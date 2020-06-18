@@ -130,7 +130,7 @@ body {
     margin: 3px;
 }
 
-.skull-activated {
+.skullActivated {
     position: absolute;
     z-index: 2;
     top: 45vh;
@@ -143,6 +143,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
 }
 
