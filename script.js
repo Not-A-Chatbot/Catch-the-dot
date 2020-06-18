@@ -33,7 +33,7 @@ class Dot {
       newPoint.classList.add("skullCatched");
       dotsCatchedElt.appendChild(newPoint);
     }
-    this.speed /= 1.1;
+    this.speed / 1.2;
     return this.points;
   }
 
@@ -41,7 +41,7 @@ class Dot {
     var newSkull = document.createElement("p");
     clearInterval(this.interval);
     clearInterval(Dot.interval);
-    Dot.speed = 0;
+    Dot.speed = 1800;
     newSkull.classList.add("skullCatched");
     dotsCatchedElt.appendChild(newSkull);
   }
@@ -61,6 +61,12 @@ const dotsCatchedElt = document.getElementById("catchedDots");
 
 function updatePoints() {
   pointsElt.innerHTML = points;
+}
+
+function letsPlay() {
+  redDot.dotMove();
+  greenDot.dotMove();
+  skull.dotMove();
 }
 
 /***** Listen evt *****/
@@ -84,20 +90,20 @@ greenDotElt.onclick = function () {
 skullElt.onclick = function () {
   console.log(`points before - ${points}`);
   if (points >= 20) {
-    var random = Math.floor(Math.random() * 2);
+    var random = Math.random() * 2;
     console.log(random);
-    if (random > 1) {
+    if (random > 1.2) {
       skull.skullCatched(redDot);
       skullSays.textContent = `I stopped the orange dot for ya, \r\n
       You pay with your points, not your life this time`;
-      skullSays.classList =`skullActivated`;
+      skullSays.classList = `skullActivated`;
 
       console.log(`I stopped the orange dot for ya`);
     } else {
       skull.skullCatched(greenDot);
       skullSays.textContent = `I stopped the blue dot for ya,\r\n
       You pay with your points, not your life this time`;
-      skullSays.classList =`skullActivated`;
+      skullSays.classList = `skullActivated`;
       console.log(`I stopped the blue dot for ya`);
     }
     points += skull.points;
@@ -106,8 +112,7 @@ skullElt.onclick = function () {
     skullSays.textContent = `You pay with your life this time, \r\n
     prepare to get mad.`;
     console.log(`You pay with your life this time,prepare to get mad.`);
-    skullSays.classList =`skullActivated`;
-    
+    skullSays.classList = `skullActivated`;
   }
 
   console.log(`points after - ${points}`);
@@ -116,12 +121,18 @@ skullElt.onclick = function () {
 };
 
 skullSays.onclick = function () {
-  skullSays.classList.toggle('skullActivated');
+  skullSays.classList.toggle("skullActivated");
   console.log(`hey let's exit this text box !`);
-  }
+};
 
+ /**/
+/* **/
+/** **/
+/*** ***/
+/**** ***/
+/**** *****/
+/***** *****/
+/****** ******/
 /***** Game *****/
 
-redDot.dotMove();
-greenDot.dotMove();
-skull.dotMove();
+letsPlay();
