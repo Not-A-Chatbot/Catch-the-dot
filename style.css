@@ -132,20 +132,39 @@ body {
 
 .skullActivated {
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     top: 45vh;
     left: 35vh;
     background: goldenrod;
-    border: white 6px groove;
+    border: white 7px groove;
     border-radius: 15px;
-    width: 35vw;
-    height: 20vh;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 40vw;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
 }
+
+/*
+#byeSkull{
+  z-index: 10;
+  background: black;
+  border: white 4px solid;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  width: 70px;
+  height: 40px;
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  color: goldenrod;
+  font-family: "Press Start 2P", cursive;
+}
+*/
 
 footer {
   width: 80vw;
