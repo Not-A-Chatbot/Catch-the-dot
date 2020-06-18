@@ -13,8 +13,8 @@ class Dot {
 
   dotMove() {
     this.interval = setInterval(() => {
-      this.column = Math.floor(Math.random() * 11);
-      this.row = Math.floor(Math.random() * 11);
+      this.column = Math.floor(Math.random() * 8);
+      this.row = Math.floor(Math.random() * 8);
       this.HTML.style.gridColumn = `${this.column}`;
       this.HTML.style.gridRow = `${this.row}`;
     }, this.speed);
